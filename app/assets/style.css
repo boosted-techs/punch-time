@@ -392,9 +392,9 @@ a[data-toggle="collapse"] {
     float: right;
 }
 
-.box.box-success {
-    /* border-top-color: white; */
-}
+ /* .box.box-success {
+    border-top-color: white;
+}  */
 
 .box {
     position: relative;
