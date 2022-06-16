@@ -4,7 +4,6 @@ class Smart extends Controller{
         parent::__construct();
     }
     function index (){
-        
         $this->smarty->assign('username',"User name");
         $this->smarty->assign('email',"Email");
         $this->smarty->assign('pass',"Password");
@@ -108,7 +107,6 @@ class Smart extends Controller{
         $this->smarty->assign('startdate',"Start Date");
         $this->smarty->assign('recent',"Recent Attendances");
         $this->smarty->display('personal/personal-dashboard.tpl');
-        
     }
 }
 ?>
