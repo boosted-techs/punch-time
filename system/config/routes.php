@@ -6,7 +6,7 @@ if ( !defined('APPLICATION_LOADED') || !APPLICATION_LOADED ) {
 
 $routes['']                                  =               "Home/index";
 //$routes['f']                               =               "Home/f";
-
+$routes['login']                                  =                "login/authenticated";
 /*
  * Website
  */
