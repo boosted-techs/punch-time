@@ -1,3 +1,4 @@
+
 <?php
 if ( !defined('APPLICATION_LOADED') || !APPLICATION_LOADED ) {
     echo json_encode(array("status" => "fail", "code" => "503", "message" => "Invalid request"));
@@ -9,6 +10,7 @@ if ( !defined('APPLICATION_LOADED') || !APPLICATION_LOADED ) {
 /*
  * MyQl username for MySQL DAL
  */
+
 $database_config['host'] = 'localhost';
 /*
  * MySql username
@@ -21,8 +23,14 @@ $database_config['username'] = 'root';
 $database_config['password'] = '';
 /*
  * Mysql database to work with
- */
-$database_config['database'] = '';
+//  */
+// $database_config['database'] = 'punch';
+// $con = mysqli_connect($host, $username,$password, $database);
+
+// if(!con){
+//     die("connection failed". mysqli_connect_error());
+// }
+// echo"connection successful";
 
 
 /**

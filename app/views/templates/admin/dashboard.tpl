@@ -1,15 +1,17 @@
 {extends file="layouts/default.tpl"}
 {block name="head" }
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js" integrity="sha256-XF29CBwU1MWLaGEnsELogU6Y6rcc5nCkhhx89nFMIDQ=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
 {/block}
 {block name ='body'}
 
-<div class="container-fluid">
+<div class="w-full md:w-1/2 xl:w-1/3 p-6">
         <div class="row">
-            <div class="col-md-12">
-            <h2 class="page-title">{$dashboard}</h2>
-            </div>    
+           <div class="bg-gradient-to-b from-gray-300 to-gray-100 uppercase text-gray-800 border-b-2 border-gray-300 rounded-tl-lg rounded-tr-lg p-2">
+                                <h2 class="font-bold uppercase text-gray-600">{$dashboard}</h2>
+                            </div>   
         </div>
 
         <div class="row">
@@ -22,15 +24,24 @@
                             <div class="progress sm">
                                 <div class="progress-bar progress-bar-aqua" style="width: 100%"></div>
                             </div>
-                            <div class="stats_d">
-                                <table style="width: 100%;">
+                            <div class="p-5">
+                                <table  class="w-full p-5 text-gray-700" style="width: 100%;">
+                                    
+                                    <thead>
+                                    <tr>
+                                        <th class="text-left text-blue-900">{$regular}</th>
+                                        <th class="text-left text-blue-900">{$intern}</th>
+                    
+                                    </tr>
+                                    </thead>
                                     <tbody>
                                         <tr>
-                                            <td>{$regular}</td>
+                                            <td>20</td>
+                                            <td>30</td>
                                             
                                         </tr>
                                         <tr>
-                                            <td>{$intern}</td>
+                                            
                                             
                                         </tr>
                                     </tbody>
@@ -49,18 +60,27 @@
                             <div class="progress sm">
                                 <div class="progress-bar progress-bar-green" style="width: 100%"></div>
                             </div>
-                            <div class="stats_d">
-                                <table style="width: 100%;">
+                            <div class="p-5">
+                                <table  class="w-full p-5 text-gray-700" style="width: 100%;">
+                                <thead>
+                                    <tr>
+                                        <th class="text-left text-blue-900">{$online}</th>
+                                        <th class="text-left text-blue-900"></th>
+                    
+                                    </tr>
+                                    </thead>
                                     <tbody>
                                         <tr>
-                                            <td>{$online}</td>
-                                           
+                                            <td>100</td>
+                                            <td>90</td>
+                                            
                                         </tr>
-                                        <tr>
-                                            <td>{$offline}</td>
+       {$offline}                                 <tr>
+                                            
                                             
                                         </tr>
                                     </tbody>
+                                   
                                 </table>
                             </div>
                         </div>
@@ -78,16 +98,25 @@
                             </div>
                             <div class="stats_d">
                                 <table style="width: 100%;">
+                                    <thead>
+                                    <tr>
+                                        <th class="text-left text-blue-900">{$approved}</th>
+                                        <th class="text-left text-blue-900">{$pending}</th>
+                    
+                                    </tr>
+                                    </thead>
                                     <tbody>
                                         <tr>
-                                            <td>{$approved}</td>
+                                            <td>100</td>
+                                            <td>90</td>
                                             
                                         </tr>
                                         <tr>
-                                            <td>{$pending}</td>
+                                            
                                             
                                         </tr>
                                     </tbody>
+                                    
                                 </table>
                             </div>
                         </div>
@@ -109,9 +138,9 @@
                     <table class="table responsive nobordertop">
                         <thead>
                             <tr>
-                                <th class="text-left">{$name}</th>
-                                <th class="text-left">{$position}</th>
-                                <th class="text-left">{$startdate}</th>
+                                <th class="text-left text-blue-900">{$name}</th>
+                                <th class ="text-left text-blue-900">{$position}</th>
+                                <th class="text-left text-blue-900">{$startdate}</th>
                             </tr>
                         </thead>
                         <tbody>                             
@@ -133,9 +162,9 @@
                         <table class="table responsive nobordertop">
                         <thead>
                             <tr>
-                                <th class="text-left">{$name}</th>
-                                <th class="text-left">{$type}</th>
-                                <th class="text-left">{$time}</th>
+                                <th class="text-left text-blue-900">{$name}</th>
+                                <th class="text-left text-blue-900">{$type}</th>
+                                <th class="text-left text-blue-900">{$time}</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -158,8 +187,8 @@
                     <table class="table responsive nobordertop">
                         <thead>
                             <tr>
-                                <th class="text-left">{$name}</th>
-                                <th class="text-left">{$date}</th>
+                                <th class="text-left text-blue-900">{$name}</th>
+                                <th class="text-left text-blue-900">{$date}</th>
                             </tr>
                         </thead>
                             <tbody>

@@ -1,0 +1,22 @@
+{
+  "name": "punch-time",
+  "version": "1.0.0",
+  "description": "Time machine for Staff",
+  "main": "index.js",
+  "scripts": {
+    "build:tailwind":"npx tailwindcss build assets/style.css -o assets/styles/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boosted-techs/punch-time.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/boosted-techs/punch-time/issues"
+  },
+  "homepage": "https://github.com/boosted-techs/punch-time#readme",
+  "dependencies": {
+    "tailwindcss": "^3.1.3"
+  }
+}

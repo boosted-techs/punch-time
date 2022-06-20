@@ -6,7 +6,11 @@ if ( !defined('APPLICATION_LOADED') || !APPLICATION_LOADED ) {
 
 $routes['']                                  =               "Home/index";
 //$routes['f']                               =               "Home/f";
-$routes['login']                             =               "Smart/index";
+$routes['login']                             =               "Login/index";
+$routes['attend']                             =               "Smart/index";
+$routes['person']                             =               "Personal/index";
+$routes['dash']                             =               "Dashboard/index";
+$routes['user']                             =               "User/index";
 /*
  * Website
  */
