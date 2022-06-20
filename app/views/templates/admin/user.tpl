@@ -5,7 +5,7 @@
 {/block}
 {block name ='body'}
 {block name='section'}
-{includes file ="user.php"}
+
 <div class="container-fluid">
         <div class="row">
             <h2 class="page-title">{$user}

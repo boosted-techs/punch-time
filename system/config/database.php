@@ -24,7 +24,7 @@ $database_config['password'] = '';
 /*
  * Mysql database to work with
 //  */
-// $database_config['database'] = 'punch';
+$database_config['database'] = 'punch';
 // $con = mysqli_connect($host, $username,$password, $database);
 
 // if(!con){

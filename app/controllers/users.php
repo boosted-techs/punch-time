@@ -1,6 +1,6 @@
 <?php
 
-class User extends Controller
+class Users extends Controller
 {
     function __construct()
     {
@@ -21,3 +21,4 @@ class User extends Controller
     }
 
 }
+?>

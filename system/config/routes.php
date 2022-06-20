@@ -10,7 +10,12 @@ $routes['login']                             =               "Login/index";
 $routes['attend']                             =               "Smart/index";
 $routes['person']                             =               "Personal/index";
 $routes['dash']                             =               "Dashboard/index";
-$routes['user']                             =               "User/index";
+$routes['user']                             =               "Users/index";
+$routes['leave']                             =               "Leaves/index";
+$routes['schedule']                             =               "Schedule/index";
+$routes['report']                             =               "Report/index";
+$routes['setting']                             =               "Setting/index";
+$routes['employ']                             =               "Employees/index";
 /*
  * Website
  */

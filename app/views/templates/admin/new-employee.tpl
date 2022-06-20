@@ -9,7 +9,7 @@
 <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <h2 class="page-title">{{ __('Employee Profile') }}</h2>
+                <h2 class="page-title">{$profile}</h2>
             </div>    
         </div>
 
