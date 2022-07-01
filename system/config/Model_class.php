@@ -59,7 +59,7 @@ class Model extends Controller {
          * Initiate the redis class
          *
          */
-        $this->redis = new Redis();
+        //$this->redis = new Redis();
         /**
          * Getting the redis database index to work with. 0 is for the app interface
          */
@@ -70,17 +70,17 @@ class Model extends Controller {
          *
          *
          */
-        $redis_configuration['is_persistent_connection'] == false ? $this->redis->connect($redis_configuration['host'], $redis_configuration['port'])
-            :
-            $this->redis->pconnect($redis_configuration['host'], $redis_configuration['port']);
-        $this->redis->select($redis_configuration['database']);
+        // $redis_configuration['is_persistent_connection'] == false ? $this->redis->connect($redis_configuration['host'], $redis_configuration['port'])
+        //     :
+        //     $this->redis->pconnect($redis_configuration['host'], $redis_configuration['port']);
+        // $this->redis->select($redis_configuration['database']);
         /*
          *
          * Pass the redis user and password as an associative array
          *
          */
 
-        $this->redis->auth($redis_configuration['auth']);
+        //$this->redis->auth($redis_configuration['auth']);
 
         /**
          *
@@ -88,7 +88,7 @@ class Model extends Controller {
          *
          */
 
-        global $redis_gateway_config;
+        //global $redis_gateway_config;
         /*
          *
          * Initiate the redis class

@@ -21,7 +21,7 @@ class Input {
             return $_GET;
         if (isset($_GET[$string]))
             return $_GET[$string];
-        else
+        else        
             return false;
     }
 }

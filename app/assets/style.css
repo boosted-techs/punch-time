@@ -1423,4 +1423,12 @@ span.teal {
         -ms-flex-direction: row;
         flex-direction: row;
     }
+
+}
+
+table {
+    text-indent: 0;
+    /* 1 */
+    border-color: inherit;
+    /* 2 */
 }

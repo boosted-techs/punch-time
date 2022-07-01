@@ -61,53 +61,78 @@
  
 
     <div class="flex flex-col md:flex-row">
-        <nav aria-label="alternative nav">
-            <div class="bg-gray-800 shadow-xl h-20 fixed bottom-0 mt-12 md:relative md:h-screen z-10 w-full md:w-48 content-center">
+        <aside id="sidebar" class="bg-side-nav w-1/2 md:w-1/6 lg:w-1/6 border-r border-side-nav hidden md:block lg:block">
+            <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-white z-20" id="nav-content">
 
                 <div class="md:mt-12 md:w-48 md:fixed md:left-0 md:top-0 content-center md:content-start text-left justify-between">
                     <ul class="list-reset flex flex-row md:flex-col pt-3 md:py-3 px-1 md:px-2 text-center md:text-left">
-                        <li class="mr-3 flex-1">
-                            <a href="/dash" class="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-pink-500">
-                                <i class="fas fa-tasks pr-0 md:pr-3"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-400 md:text-gray-200 block md:inline-block">{$dashboard}</span>
+                        <li class=" w-full h-full py-3 px-2 border-b border-light-border bg-white">
+                            <a href="/dash"
+                             class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-900 border-b-2 border-white hover:border-purple-500"">
+                                <i class="fas fa-tachometer-alt float-left mx-2 text-blue-600 ">{$dashboard}</i>
+                                
+                                <span><i class="fas fa-angle-right float-right"></i></span>
+                            </a>
+                       </li>
+                        <li class=" w-full h-full py-3 px-2 border-b border-light-border bg-white">
+                            <a href="/employ" 
+                                class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-900 border-b-2 border-white hover:border-purple-500"">
+                                <i class="fa fa-envelope pr-0 md:pr-3 text-blue-600 "> {$employee}</i>
+                                
+                                <span ><i class="fas fa-angle-right float-right"></i></span>
                             </a>
                         </li>
-                        <li class="mr-3 flex-1">
-                            <a href="/employ" class="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-purple-500">
-                                <i class="fa fa-envelope pr-0 md:pr-3"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-400 md:text-gray-200 block md:inline-block">{$employee}</span>
+                        <li class=" w-full h-full py-3 px-2 border-b border-light-border bg-white">
+                            <a href="/attend" 
+                            class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-900 border-b-2 border-white hover:border-purple-500"">
+                                <i class="fas fa-chart-area pr-0 md:pr-3 text-blue-600">
+                                {$attendance}
+                                </i>
+                                 <span ><i class="fas fa-angle-right float-right"></i></span>
+                                
                             </a>
                         </li>
-                        <li class="mr-3 flex-1">
-                            <a href="/attend" class="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-blue-600">
-                                <i class="fas fa-chart-area pr-0 md:pr-3 text-blue-600"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-white md:text-white block md:inline-block">{$attendance}</span>
-                            </a>
-                        </li>
-                        <li class="mr-3 flex-1">
-                            <a href="/schedule" class="block py-1 md:py-3 pl-0 md:pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-red-500">
-                                <i class="fa fa-wallet pr-0 md:pr-3"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-400 md:text-gray-200 block md:inline-block">{$schedule}</span>
-                            </a>
-                        </li>
-
-                        <li class="mr-3 flex-1">
-                            <a href="/leave" class="block py-1 md:py-3 pl-0 md:pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-red-500">
-                                <i class="fa fa-wallet pr-0 md:pr-3"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-400 md:text-gray-200 block md:inline-block">{$leave}</span>
-                            </a>
-                        </li>
-
-                        <li class="mr-3 flex-1">
-                            <a href="/report" class="block py-1 md:py-3 pl-0 md:pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-red-500">
-                                <i class="fa fa-wallet pr-0 md:pr-3"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-400 md:text-gray-200 block md:inline-block">{$report}</span>
-                            </a>
-                        </li>
-
-                        <li class="mr-3 flex-1">
-                            <a href="/user" class="block py-1 md:py-3 pl-0 md:pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-red-500">
-                                <i class="fa fa-wallet pr-0 md:pr-3"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-400 md:text-gray-200 block md:inline-block">{$user}</span>
+                        <li class=" w-full h-full py-3 px-2 border-b border-light-border bg-white">
+                            <a href="/schedule" 
+                             class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-900 border-b-2 border-white hover:border-purple-500"">
+                                <i class="fa fa-wallet pr-0 md:pr-3 text-blue-600 ">{$schedule}</i>
+                                
+                                <span ><i class="fas fa-angle-right float-right"></i></span>
+                                
                             </a>
                         </li>
 
-                        <li class="mr-3 flex-1">
-                            <a href="/setting" class="block py-1 md:py-3 pl-0 md:pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-red-500">
-                                <i class="fa fa-wallet pr-0 md:pr-3"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-400 md:text-gray-200 block md:inline-block">{$setting}</span>
+                        <li class=" w-full h-full py-3 px-2 border-b border-light-border bg-white">
+                            <a href="/leave"
+                              class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-900 border-b-2 border-white hover:border-purple-500"">
+                                <i class="fa fa-wallet pr-0 md:pr-3 text-blue-600 ">{$leave}</i>
+                                
+                                <span ><i class="fas fa-angle-right float-right"></i></span>
+                            </a>
+                        </li>
+
+                        <li class=" w-full h-full py-3 px-2 border-b border-light-border bg-white">
+                            <a href="/report" 
+                            class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-900 border-b-2 border-white hover:border-purple-500"">
+                                <i class="fa fa-wallet pr-0 md:pr-3 text-blue-600 ">{$report}</i>
+                                
+                                <span ><i class="fas fa-angle-right float-right"></i></span>
+                            </a>
+                        </li>
+
+                        <li class=" w-full h-full py-3 px-2 border-b border-light-border bg-white">
+                            <a href="/user" 
+                            class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-900 border-b-2 border-white hover:border-purple-500"">
+                                <i class="fa fa-wallet pr-0 md:pr-3 text-blue-600 ">{$user}</i>
+                                
+                                <span ><i class="fas fa-angle-right float-right"></i></span>
+                            </a>
+                        </li>
+
+                        <li class=" w-full h-full py-3 px-2 border-b border-light-border bg-white">
+                            <a href="/setting" class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-900 border-b-2 border-white hover:border-purple-500"">
+                                <i class="fa fa-wallet pr-0 md:pr-3 text-blue-600 ">{$setting}</i>
+                                <span ><i class="fas fa-angle-right float-right"></i></span>
                             </a>
                         </li>
                     </ul>
@@ -115,7 +140,7 @@
 
 
             </div>
-        </nav>
+        </aside>
         {block name ="section"}
             <div id="main" class="main-content flex-1 bg-gray-100 mt-12 md:mt-2 pb-24 md:pb-5">
 

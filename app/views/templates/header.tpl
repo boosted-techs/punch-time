@@ -9,13 +9,15 @@
 {/block}
 
 {block name="main"}
+
 {block name="section"}
+
 {/block}
 {/block}
 
 {/block}
 
-{block name="js-code"}
+{block name="scripts"}
 
    
 {/block}

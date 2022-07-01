@@ -1,6 +1,6 @@
 <?php
 
-class Login extends Controller
+class defaultController extends Controller
 {
      function __construct()
     {
@@ -26,8 +26,7 @@ class Login extends Controller
         $this->smarty->assign('issue',"Issues");
         $this->smarty->assign('setting',"Setting");
 
-
-
+        
         //  $this->smarty->assign('dashboard',"Dashboard");
         // $this->smarty->assign('employee',"Employees");
         $this->smarty->assign('regular',"Regular");

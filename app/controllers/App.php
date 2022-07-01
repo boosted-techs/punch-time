@@ -1,6 +1,6 @@
 <?php
 
-class Home extends Controller
+class App extends Controller
 {
     function __construct()
     {
@@ -8,7 +8,7 @@ class Home extends Controller
     }
 
     function index() {
-        $this->load_view("home");
+        $this->load_view("app");
     }
 
 }

@@ -1519,6 +1519,8 @@ class MysqliDb
             return;
         }
 
+
+
         $this->_query = $operation . " " . implode(' ', $this->_queryOptions) . " INTO " . self::$prefix . $tableName;
         $stmt = $this->_buildQuery(null, $insertData);
         $status = $stmt->execute();
@@ -1991,6 +1993,7 @@ class MysqliDb
 
         $error = $this->mysqli()->error;
         $query = $this->_query;
+        var_dump($query);
         $errno = $this->mysqli()->errno;
         $this->reset();
         throw new Exception(sprintf('%s query: %s', $error, $query), $errno);

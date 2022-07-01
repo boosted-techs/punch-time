@@ -7,88 +7,23 @@
 {/block}
 {block name ='body'}
 
-<div class="w-full md:w-1/2 xl:w-1/3 p-6">
-        <div class="row">
-           <div class="bg-gradient-to-b from-gray-300 to-gray-100 uppercase text-gray-800 border-b-2 border-gray-300 rounded-tl-lg rounded-tr-lg p-2">
-                                <h2 class="font-bold uppercase text-gray-600">{$dashboard}</h2>
-                            </div>   
-        </div>
-
-
-        <div class="row">
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <div class="box box-success">
-                    <div class="box-header with-border">
-                        <h3 class="box-title">{$new}</h3>
-                        <div class="box-tools pull-right">
-                            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                        </div>
-                    </div>
-                    <div class="box-body">
-                    <table class="table responsive nobordertop">
-                        <thead>
-                            <tr>
-                                <th class="text-left text-blue-900">{$name}</th>
-                                <th class ="text-left text-blue-900">{$position}</th>
-                                <th class="text-left text-blue-900">{$startdate}</th>
-                            </tr>
-                        </thead>
-                        <tbody>                             
-
-                        </tbody>
-                    </table>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <div class="box box-success">
-                    <div class="box-header with-border">
-                        <h3 class="box-title">{$recent}</h3>
-                        <div class="box-tools pull-right">
-                            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                        </div>
-                    </div>
-                    <div class="box-body">
-                        <table class="table responsive nobordertop">
-                        <thead>
-                            <tr>
-                                <th class="text-left text-blue-900">{$name}</th>
-                                <th class="text-left text-blue-900">{$type}</th>
-                                <th class="text-left text-blue-900">{$time}</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            
-                        </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <div class="box box-success">
-                    <div class="box-header with-border">
-                        <h3 class="box-title">{$leaves}</h3>
-                        <div class="box-tools pull-right">
-                            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                        </div>
-                    </div>
-                    <div class="box-body">
-                    <table class="table responsive nobordertop">
-                        <thead>
-                            <tr>
-                                <th class="text-left text-blue-900">{$name}</th>
-                                <th class="text-left text-blue-900">{$date}</th>
-                            </tr>
-                        </thead>
-                            <tbody>
-                                
-                            </tbody>
-                    </table>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div>
+    <div class="flex flex-wrap">
+      <div class="w-full xl:w-8/12 mb-12 xl:mb-0 px-4">
+       
+      </div>
+      <div class="w-full xl:w-4/12 px-4">
+       
+      </div>
     </div>
+    <div class="flex flex-wrap mt-4">
+      <div class="w-full xl:w-8/12 mb-12 xl:mb-0 px-4">
+        
+      </div>
+      <div class="w-full xl:w-4/12 px-4">
+        
+      </div>
+    </div>
+  </div>
 
-    {/block}
+{/block}
