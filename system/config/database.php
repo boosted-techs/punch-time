@@ -20,11 +20,11 @@ $database_config['username'] = 'root';
 /*
  * Mysql Password
  */
-$database_config['password'] = '';
+$database_config['password'] = 'root';
 /*
  * Mysql database to work with
 //  */
-$database_config['database'] = 'punch';
+$database_config['database'] = 'intern';
 // $con = mysqli_connect($host, $username,$password, $database);
 
 // if(!con){
