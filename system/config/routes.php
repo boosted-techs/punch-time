@@ -20,7 +20,7 @@ $routes['employ']                            =               "Employees/index";
 $routes['register']                          =               "RegisterController/register_user";
 $routes['add_user']                          =               "HomeController/index";
 $routes['login_user']                        =                "RegisterController/login_user";
-//$routes['login']                           =               "LoginController/index";
+$routes['save']                           =                  "UsersController/add";
 /*
  * Website
  */

@@ -2,47 +2,36 @@
 if ( !defined('APPLICATION_LOADED') || !APPLICATION_LOADED ) {
     echo json_encode(array("status" => "fail", "code" => "503", "message" => "Invalid request"));
 }
-@include 'database.php';
 
-class Users_model extends Model {
-    function __construct() {
+
+class Users_model extends Model
+{
+    function __construct()
+    {
         parent::__construct();
     }
 
 
-    function add_user() {
-       
+    function add_user($data= false)
+    {
+        $id = $this->inputs->post("id");
+        $fname = $this->inputs->post("fname");
+        $lname = $this->inputs->post("lname");
+        $email = $this->inputs->post("email");
+        $role = $this->inputs->post("role");
+        $account = $this->inputs->post("account");
+        $gender = $this->inputs->post("gender");
+        $date = $this->inputs->post("date");
 
-        if(isset($_POST['submit'])){
-           unset($_POST['submit']);
-            $username = $this->db->insert ('employee', ($_POST));
-            $email = $this->db->insert ('employee', ($_POST));
-            $pasword = $this->db->insert ('employee', ($_POST));
-            $usertype= $this->db->insert ('employee', ($_POST));
-            
+        $this->db->insert("employee", ["id"=> $id,"fname" => $fname,"lname" => $lname,
+            "email" => $email, "role" => $role, "account" => $account, "gender" => $gender, "date" => date("Y-m-d")]);
 
-        };
-
-
-
-        // print_r($_GET);
-       
-
-        //$names = $this->inputs->get("names");
-       // $name = $this->inputs->get->name;
-
-       // $this->session->set_user_data("aaa", 444);
-        //$this->session->data("aa");
-        //
-      //$this->db->insert  ("employee", [$names]);
-        //  $this->db->insert ("", []);
-        // echo $name;
-
-        //  $names = $this->db->insert ($this->dbTable, $sqlData);
-        // if (!empty ($this->primaryKey) && empty ($this->data[$this->primaryKey]))
-        //     $this->data[$this->primaryKey] = $names;
-        // $this->isNew = false;
-        // $this->toSkip = array();
-        // return $names;
     }
+    function get_user(){
+        $this->db->orderBy("id","asc");
+        return $this->db->get("employee",null,"id,fname,lname,email, gender,role, account, date");
+    }
+
+
+
 }

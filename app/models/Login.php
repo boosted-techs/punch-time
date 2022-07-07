@@ -2,7 +2,7 @@
 if ( !defined('APPLICATION_LOADED') || !APPLICATION_LOADED ) {
     echo json_encode(array("status" => "fail", "code" => "503", "message" => "Invalid request"));
 }
-@include 'database.php';
+//@include 'database.php';
 
 class Login extends Model {
     function __construct() {
@@ -12,7 +12,13 @@ class Login extends Model {
 
 
     function login() {
-        $this->db->insert ('login', ($_POST));
+        $username = $this->inputs-> post("username");
+        $phone    = $this->inputs-> post("phone");
+        $email    = $this->inputs-> post("Email");
+        $password = $this->inputs-> post("password");
+        $gender = $this->inputs-> post("Gender");
+        $this->db->insert("login", ["username"=>$username, "phone"=>$phone, "Email"=>$email,"password"=>$password, "Gender"=>$gender]);
+        //$this->db->insert ('login', ($_POST));
     }
 
     function login_users(){
@@ -45,25 +51,5 @@ class Login extends Model {
         );
     }
 
-
-    // function register() {
-
-    //     echo "hi angie<br>";
-    //     var_dump($_POST);
-       
-    //     if(isset($_POST['submit'])){
-    //         unset($_POST['submit']);
-    //         $username = $this->db->insert ('login', ($_POST));
-    //         $email = $this->db->insert ('login', ($_POST));
-    //         $pasword = $this->db->insert ('login', ($_POST));
-    //         $usertype= $this->db->insert ('login', ($_POST));
-    //         echo('$username');
-    //     };
-        
-    // }
-
-
-
-       
     
 }

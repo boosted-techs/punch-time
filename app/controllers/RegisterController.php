@@ -1,6 +1,6 @@
 <?php
 
-@include 'database.php';
+//@include 'database.php';
 
 class RegisterController extends Controller
 {
@@ -11,6 +11,7 @@ class RegisterController extends Controller
     }
 
     function index() {
+
         $this->load_view("register");
     }
 
@@ -26,46 +27,5 @@ class RegisterController extends Controller
     }
 
 
-
-
-
-
-
-
-
-
-    // function test_input($data){
-    //     $u_name= $email =$pass= $c_pass = $data;
-    //     $data = trim($data);
-    //     $data = stripslashes($data);
-    //     $data = htmlspecialchars($data);
-    //     return $data;
-    // }
-
-//     public function register( $username=null, $password=null, $email= null,$usertype=null)
-// {
-//     try {
-//         $newPassword = password_hash($password, PASSWORD_DEFAULT);
-
-//         // $stmt = $this->conn->prepare("INSERT INTO user(name, surname, username, password, email) 
-//         //                      VALUES(:name, :surname, :username, :password, :email)");
-
-//         $sqlData = $this->prepareData ($username,$email,$password,$usertype);
-//         // if (!$this->validate ($sqlData))
-//         //     return false;
-
-//         $sqlData->bindParam(":username", $username);  
-//         $sqlData->bindParam(":email", $email); 
-//         $sqlData->bindParam(":password", $password);  
-//         $sqlData->bindParam(":usertype", $usertype);
-
-//         $sqlData->execute();   
-
-//         return $sqlData;   
-// }
-//     catch(PDOException $e) {
-//             echo $e->getMessage();
-//     }
-//}
 }
-    ?>
+?>
