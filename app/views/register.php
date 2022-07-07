@@ -272,10 +272,10 @@ if (!defined('APPLICATION_LOADED') || !APPLICATION_LOADED) {
                                         <main
                                                 class="container mx-auto p-4 mt-12 bg-white flex flex-col items-center justify-center text-gray-700"
                                         >
-                                            <div class="w-10/12 sm:w-8/12 md:w-6/12 lg:w-5/12 xl:w-4/12 mb-4">
+                                            <div class=" sm:w-full md:w-full lg:w-full xl:w-full mb-4">
                                                 <h1 class="text-4xl font-semibold ">Login here</h1>
                                             </div>
-                                            <div class="w-10/12 sm:w-8/12 md:w-6/12 lg:w-5/12 xl:w-4/12 mb-6">
+                                            <div class=" sm:w-full md:w-full lg:w-full xl:w-full mb-4">
                                                 <input
                                                         class="mb-4 p-2 appearance-none block w-full bg-gray-200 placeholder-gray-900 rounded border focus:border-teal-500"
                                                         type="text"
@@ -289,23 +289,19 @@ if (!defined('APPLICATION_LOADED') || !APPLICATION_LOADED) {
                                                 />
 
                                                 <div class="flex items-center">
-                                                    <div class="w-1/2 flex items-center">
+                                                    <div class="flex items-center">
                                                         <input id="remember-me" type="checkbox" class="mt-1 mr-2" />
                                                         <label for="remember-me">Remember me!</label>
                                                     </div>
 
                                                 </div>
                                             </div>
-                                            <div class="text-right w-10/12 sm:w-8/12 md:w-6/12 lg:w-5/12 xl:w-4/12 mb-6">
+                                            <div class=" sm:w-full md:w-full lg:w-full xl:w-full mb-4">
                                                 <a class="text-sm font-bold text-teal-500 hover:underline cursor-pointer"
                                                 >Forgot your password?</a
                                                 >
                                             </div>
-                                            <div
-                                                    class="flex justify-center w-10/12 sm:w-8/12 md:w-6/12 lg:w-5/12 xl:w-4/12"
-                                            >
 
-                                            </div>
                                         </main>
 
                                         <div class="flex justify-between items-center mt-6 pt-6 border-t">
