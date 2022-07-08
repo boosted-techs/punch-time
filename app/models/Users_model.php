@@ -14,14 +14,14 @@ class Users_model extends Model
 
     function add_user($data= false)
     {
-        $id = $this->inputs->post("id");
-        $fname = $this->inputs->post("fname");
-        $lname = $this->inputs->post("lname");
-        $email = $this->inputs->post("email");
-        $role = $this->inputs->post("role");
+        $id      = $this->inputs->post("id");
+        $fname   = $this->inputs->post("fname");
+        $lname   = $this->inputs->post("lname");
+        $email   = $this->inputs->post("email");
+        $role    = $this->inputs->post("role");
         $account = $this->inputs->post("account");
-        $gender = $this->inputs->post("gender");
-        $date = $this->inputs->post("date");
+        $gender  = $this->inputs->post("gender");
+        $date    = $this->inputs->post("date");
 
         $this->db->insert("employee", ["id"=> $id,"fname" => $fname,"lname" => $lname,
             "email" => $email, "role" => $role, "account" => $account, "gender" => $gender, "date" => date("Y-m-d")]);

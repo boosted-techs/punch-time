@@ -155,7 +155,7 @@
 {*   create user *}
 
     <div id="create-modal" tabindex="-1" aria-hidden="true"
-         class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
+         class=" top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
         <div class="relative p-4 w-full max-w-md h-full md:h-auto">
 
             <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
@@ -251,7 +251,7 @@
 
                                 <input
                                         class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                                        type="text" name="date"  />
+                                        type="date" name="date"  />
                             </div>
 
                             <div class="flex items-center justify-start mt-4 gap-x-2">
