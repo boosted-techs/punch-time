@@ -6,14 +6,14 @@
  * Date: 7/19/21
  * Time: 9:28 AM
  */
-const VIEW_FOLDER = "app/views/";
+
 class Controller {
     /*
-    * Creating dynamic variables
+     *
+     * Smarty class
+     *
     */
-
-    public array $variables = [];
-
+    public $smarty;
     /*
      *
      * Used to load classes
@@ -25,99 +25,102 @@ class Controller {
      * Input class object
      *
     */
-    public Input $inputs;
+    public $inputs;
     /*
      * Server Class object
      *
     */
-    public Server $server;
+    public $server;
     /*
      *
      * Cookie object
      *
     */
-    public Cookies $cookie;
+    public $cookie;
     /*
      *
      * Session class object
      *
     */
-    public Session $session;
+    public $session;
     /*
      *
      * Mail class object
      *
     */
-    public Mail $mail;
+    public $mail;
     /*
      *
      * Model class object
      *
     */
-    public stdClass|array $model = [];
+    public $model = [];
     /*
      *
      * Helper class Object
      *
     */
-    public stdClass|array $library = [];
+    public $library = [];
     /*
      *
      * Helper
      *
     */
-    public stdClass $helper;
+    public $helper;
     /*
      *
      * Controller class object
      *
     */
-    public stdClass|array $controller = [];
-
+    public $controller = [];
+    /*
+     *
+     * Redis class Object
+     *
+    */
+    public $redis_cli;
     /*
      * Helpers object
      */
 
-    private array $helpers = [];
+    private $helpers = [];
 
     /*
      * Security helper
      */
-    public Security $security;
+    public $security;
     /*
      * Strings helper
      */
-    public String_helper $strings;
-
-    public Smarty $smarty;
+    public $strings;
 
     function __construct() {
         /*
          *
+         Loading smarty
+        */
+        $smarty = new Smarty();
+        $smarty->setTemplateDir(APP_PATH.'views/templates')
+            ->setCompileDir(APP_PATH.'views/templates_c')
+            ->setCacheDir(APP_PATH.'views/cache');
+        $this->smarty = $smarty;
 
-
+        /*
          * Inputs
          */
-        $inputs = new Input();
-
-        $this->inputs = $inputs;
+        $this->inputs = new Input();
         /*
          * Server class
          */
-
         $this->server = new Server();
         /*
          * Cookies class
          */
-        $cookie = new Cookies();
-
-        $this->cookie= $cookie;
+        $this->cookie = new Cookies();
         /*
          * Session class
          */
-        $session = new Session();
-
-        $this->session = $session;
+        $this->session = new Session();
         /*
          * Mail class
          */
@@ -135,41 +138,6 @@ class Controller {
         $this->model = new stdClass();
         $this->library = new stdClass();
         $this->controller = new stdClass();
-        /*
-         * Load default variables
-         */
-        $this->assign();
-        $smarty = new Smarty();
-        $smarty->setTemplateDir(APP_PATH.'views/templates')
-            ->setCompileDir(APP_PATH.'views/templates_c')
-            ->setCacheDir(APP_PATH.'views/cache');
-        $this->smarty = $smarty;
-    }
-
-    function assign($variable = '', $value = '') {
-        if (! empty($variable))
-            if (isset($this->variables->$variable))
-                unset($this->variables->$variable);
-
-        $assigned_data = array($variable => $value);
-        array_push($this->variables, $assigned_data);
-    }
-
-    function display($file) {
-        /*
-         * This piece of code changes the array indices provided by the assign method to variable so that they can be accessed in the display as variables
-         */
-        foreach ($this->variables as $variable) extract($variable);
-        /*
-         *
-         */
-
-        include_once VIEW_FOLDER . $file . ".php";
-        exit;
-    }
-
-    function load_view($file) {
-        include_once VIEW_FOLDER . $file . ".php";
     }
 
     function model($class) {
@@ -228,6 +196,10 @@ class Controller {
         else
             return false;
     }
-}
 
-//$bpl = new Controller();
+    function class_load_error($error) {
+        $smarty = $this->smarty();
+        $smarty->assign("error", $error);
+        $smarty->display("./error/error.tpl");
+    }
+}

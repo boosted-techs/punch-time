@@ -1,23 +1,22 @@
 <?php
-if ( !defined('APPLICATION_LOADED') || !APPLICATION_LOADED ) {
-    echo json_encode(array("status" => "fail", "code" => "503", "message" => "Invalid request"));
-}
+
 //Less define our simple routes in this file to help us map to the exact methods in our project
 
-$routes['']                                  =               "Test/index";
-//$routes['f']                               =               "Home/f";
-$routes['login']                             =               "Login/index";
-$routes['attend']                             =               "Smart/index";
-$routes['person']                             =               "Personal/index";
-$routes['dash']                             =               "Dashboard/index";
-$routes['user']                             =               "Users/index";
-$routes['leave']                             =               "Leaves/index";
-$routes['schedule']                             =               "Schedule/index";
-$routes['report']                             =               "Report/index";
-$routes['setting']                             =               "Setting/index";
-$routes['employ']                             =               "Employees/index";
-$routes['test']                             =                   "Test/index";
-$routes['save'] = "Test/save";
-/*
- * Website
- */
+$route['']                                  =               "Home/index";
+$route['admin/forgot-pwd']                  =               "Home/forgot_password";
+$route['admin/signin']                      =               "Home/sign_in";
+$route['cars']                              =               "Dashboard/cars";
+$route['clients']                           =               "Dashboard/clients";
+$route['dashboard']                         =               "Dashboard/index";
+$route['data/add-car-type']                 =               "Dashboard/add_car_type";
+$route['data/add-slots']                    =               "Dashboard/add_slot";
+$route['data/book']                         =               "Bookings/reserve";
+$route['_logout']                            =               "Dashboard/logout";
+$route['parking-slots']                     =               "Dashboard/parking_slots";
+$route['s/car-look-up']                     =               "Cars/car_look_up";
+$route['s/driver-look-up']                  =               "Drivers/driver_look_up";
+
+$route['checkout/(:any)']                   =               "Bookings/checkout/$1";
+$route['del/car-type/(:any)']               =               "Dashboard/delete_car_type/$1";
+$route['del/slot/(:any)']                   =               "Dashboard/delete_slot/$1";
+$route['print/(:any)']                      =               "Dashboard/print/$1";

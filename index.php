@@ -1,32 +1,23 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Ashiraff
- * Company: Boosted Technologies LTD
- * Company Email: office@boostedtechs.com
- * Company Website:https://www.boostedtechs.com
- * Author's website: https://www.tumusii.me
- * Date: 7/19/21
- * Time: 9:29 AM
- */
 header("X-Frame-Options: SAMEORIGIN");
-/*
- * Prevent direct script access
- */
-const APPLICATION_LOADED = true;
-
+//if(!isset($_SERVER["HTTPS"]) || $_SERVER["HTTPS"] != "on") {
+//    header("Location: https://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"], true, 301);
+//    //Prevent the rest of the script from executing.
+//    exit;
+//}
+session_set_cookie_params(33600, '/', $_SERVER['SERVER_NAME'], FALSE, TRUE);
 session_start();
-//date_default_timezone_set("Africa/Nairobi");
+date_default_timezone_set("Africa/Nairobi");
 ////Error reporting
-//ini_set('max_execution_time', 0);
+ini_set('max_execution_time', 0);
 //ini_set('display_errors', 'on');
-
-const SYSTEM_PATH = "system/";
-const APP_PATH = "app/";
+error_reporting(-1);
+define("SYSTEM_PATH", "system/");
+define("APP_PATH", "app/");
 
 include_once(SYSTEM_PATH."config/autoload.config.php");
 global $database;
-
+$routes = $route;
 
 $uri = $_SERVER['REQUEST_URI'];
 
@@ -42,7 +33,7 @@ for ($i = 1; $i < count($uri_exploded); $i++) {
         //For urls that end in slashes, we truncate the last space and match the uri to the perfect route
         //Eg, ./some/ and ./some are the same. There we treat both as the same
         continue;
-    $args[] = $uri_exploded[$i];
+    array_push($args, $uri_exploded[$i]);
 }
 
 $args_array = $args;
@@ -69,7 +60,7 @@ function map_uri_to_method($routes, $args, $args_array)
                 $class_ucfirst = ucfirst($val_route[0]);
                 $class = New $class_ucfirst;
                 call_user_func(array($class, $val_route[1]));
-                //Let's deal with function arguments;
+                //Lets deal with function arguments;
                 return;
             } else
                 continue;
@@ -81,7 +72,7 @@ function map_uri_to_method($routes, $args, $args_array)
             //echo "<br>".$a. "-".$string;
             //Lets match array argument count in string uri and the loop supplied route
 
-            //Reverse array order getting arguments first
+            //Reverse array order to get arguments first
             $dynamic_route_reversed = array_reverse($dynamic_route, false);
             $args_array_reversed = array_reverse($args_array, false);
             $func_arguments = array(); //Arguments supplied from the url.
@@ -90,7 +81,7 @@ function map_uri_to_method($routes, $args, $args_array)
                 for ($i = 0; $i < count($dynamic_route_reversed); $i++)
                     if (strcmp($dynamic_route_reversed[$i], "(:any)") == 0) {
                         unset($dynamic_route_reversed[$i]);
-                        if (isset($args_array_reversed[$i])) { //Let's store the arguments provided by the uri
+                        if (isset($args_array_reversed[$i])) { //Lets store the arguments provided by the uri
                             $func_arguments[$i] = $args_array_reversed[$i];
                             unset($args_array_reversed[$i]);
                         } else

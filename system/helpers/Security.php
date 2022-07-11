@@ -13,14 +13,17 @@ class Security
     }
     function xss_clean($string) {
         /*
+         * Clean string from html tags
+         */
+        $string = strip_tags($string);
+        /*
          * Return cleaned string
          */
-        return filter_var(strip_tags($string), FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-
+        filter_var($string, FILTER_SANITIZE_STRING);
+        return $string;
     }
 
-    function validate_email($email): bool
-    {
+    function validate_email($email) {
         /*
         *
          * Remove all illegal characters from email
@@ -30,16 +33,15 @@ class Security
         /*
          * Validate email
          */
-        return ! filter_var($email, FILTER_VALIDATE_EMAIL) === false;
+        return (! filter_var($email, FILTER_VALIDATE_EMAIL) === false) ? true : false;
     }
 
-    function validate_ip_address($ip): bool
-    {
-        return !filter_var($ip, FILTER_VALIDATE_IP) === false;
+    function validate_ip_address($ip) {
+        return (!filter_var($ip, FILTER_VALIDATE_IP) === false) ? true : false;
     }
 
     function validate_url($url) {
         $url = filter_var($url, FILTER_SANITIZE_URL);
-        return filter_var($url, FILTER_VALIDATE_URL);
+        return (!filter_var($url, FILTER_VALIDATE_URL) === false) ? true : false;
     }
 }
